@@ -1,6 +1,5 @@
 # project/app/main.py
 
-
 from fastapi import FastAPI, Depends
 
 from app.config import get_settings, Settings
