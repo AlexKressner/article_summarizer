@@ -2,3 +2,4 @@ env
 .dockerignore
 Dockerfile
 Dockerfile.prod
+api_development_schema.pages

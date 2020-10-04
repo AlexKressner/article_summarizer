@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install system dependencies
+# install system dependencies for debian
 RUN apt-get update \
 # gcc is required by fastapi and netcat as network utility tool
   && apt-get -y install netcat gcc \
