@@ -19,7 +19,7 @@ def test_create_summaries_invalid_json(test_app):
     assert response.json() == {
         "detail": [
             {
-                "loc": ["body", "payload", "url"],
+                "loc": ["body", "url"],
                 "msg": "field required",
                 "type": "value_error.missing"
             }
