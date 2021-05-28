@@ -1,10 +1,10 @@
 # project/app/api/crud.py
-# does all the heavy lifting with the postgres database 
+# does all the heavy lifting with the postgres database
+
+from typing import List, Union
 
 from app.models.pydantic import SummaryPayloadSchema
 from app.models.tortoise import TextSummary
-
-from typing import Union, List
 
 
 async def post(payload: SummaryPayloadSchema) -> int:

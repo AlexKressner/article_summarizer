@@ -5,11 +5,10 @@ import logging  # new
 import os
 
 from fastapi import FastAPI
-from tortoise import Tortoise, run_async # updated
+from tortoise import Tortoise, run_async  # updated
 from tortoise.contrib.fastapi import register_tortoise
 
-
-log = logging.getLogger(__name__) # new
+log = logging.getLogger(__name__)  # new
 
 
 def init_db(app: FastAPI) -> None:
@@ -28,7 +27,7 @@ async def generate_schema() -> None:
 
     await Tortoise.init(
         db_url=os.environ.get("DATABASE_URL"),
-        modules={'models': ['models.tortoise']},
+        modules={"models": ["models.tortoise"]},
     )
     log.info("Generating database schema via Tortoise...")
     await Tortoise.generate_schemas()
@@ -36,5 +35,5 @@ async def generate_schema() -> None:
 
 
 # new
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_async(generate_schema())
