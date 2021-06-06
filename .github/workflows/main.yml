@@ -14,7 +14,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2.3.4
       - name: Log in to GitHub Packages
-        run: echo ${{ secrets.GITHUB_TOKEN }}| docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
+        run: echo ${{ secrets.GITHUB_TOKEN }}| docker login -u $GITHUB_ACTOR --password-stdin docker.pkg.github.com
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
@@ -37,9 +37,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2.3.4
       - name: Log in to GitHub Packages
-        run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
