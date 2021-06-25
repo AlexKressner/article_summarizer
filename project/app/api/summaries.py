@@ -7,9 +7,13 @@ from fastapi import APIRouter, HTTPException
 
 # via crud.py all the heavy lifting is done, e.g. data base interaction
 from app.api import crud
-from app.models.pydantic import (SummaryPayloadSchema, SummaryResponseSchema,
-                                 SummaryUpdatePayloadSchema)
 from app.models.tortoise import SummarySchema
+
+from app.models.pydantic import (  # isort:skip
+    SummaryPayloadSchema,
+    SummaryResponseSchema,
+    SummaryUpdatePayloadSchema,
+)
 
 router = APIRouter()
 
